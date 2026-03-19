@@ -1,0 +1,80 @@
+{
+  "name": "npm-package-typescript-template",
+  "version": "1.0.0-alpha",
+  "description": "npm-package-typescript-template",
+  "author": "Mark <mark@remarkablemark.org> (https://remarkablemark.org)",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "clean": "rm -rf coverage dist docs",
+    "docs": "typedoc",
+    "docs:watch": "npm run docs -- --watch",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:package": "publint",
+    "lint:tsc": "tsc",
+    "prepare": "husky",
+    "prepublishOnly": "npm run build && npm run lint && npm run lint:tsc && npm run test:ci",
+    "test": "vitest run",
+    "test:ci": "CI=true npm test -- --color",
+    "test:watch": "vitest --coverage.enabled=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remarkablemark/npm-package-typescript-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/remarkablemark/npm-package-typescript-template/issues"
+  },
+  "keywords": [
+    "npm-package-typescript-template"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "20.5.0",
+    "@commitlint/config-conventional": "20.5.0",
+    "@eslint/compat": "2.0.3",
+    "@eslint/js": "10.0.1",
+    "@types/node": "25.5.0",
+    "@vitest/coverage-v8": "4.1.0",
+    "eslint": "10.0.3",
+    "eslint-plugin-prettier": "5.5.5",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "eslint-plugin-tsdoc": "0.5.2",
+    "globals": "17.4.0",
+    "husky": "9.1.7",
+    "lint-staged": "16.4.0",
+    "prettier": "3.8.1",
+    "publint": "0.3.18",
+    "typedoc": "0.28.17",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.57.1",
+    "vite": "8.0.1",
+    "vite-plugin-dts": "4.5.4",
+    "vitest": "4.1.0"
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/remarkablemark"
+    }
+  ],
+  "license": "MIT"
+}
