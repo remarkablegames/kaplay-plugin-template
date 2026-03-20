@@ -3,19 +3,19 @@ import type { KAPLAYCtx } from 'kaplay';
 type Plugin = () => void;
 
 declare global {
-  var plugin: Plugin;
+  var example: Plugin;
 }
 
-export default function kaplayPluginFactory({ global = false } = {}) {
+export function examplePlugin({ global = false } = {}) {
   return (k: KAPLAYCtx) => {
-    const plugin: Plugin = () => {
+    const example: Plugin = () => {
       k.debug.log('kaplay-plugin-template');
     };
 
     if (global) {
-      globalThis.plugin = plugin;
+      globalThis.example = example;
     }
 
-    return { plugin };
+    return { example };
   };
 }

@@ -36,23 +36,23 @@ Use the plugin in your game:
 
 ```ts
 import kaplay from 'kaplay';
-import kaplayPluginFactory from 'kaplay-plugin-template';
+import { examplePlugin } from 'kaplay-plugin-template';
 
 const k = kaplay({
-  plugins: [kaplayPluginFactory()],
+  plugins: [examplePlugin()],
 });
 
-k.plugin();
+k.example();
 ```
 
-To expose `plugin` on the window, enable the `global` option:
+To expose `example` on the window, enable the `global` option:
 
 ```ts
 const k = kaplay({
-  plugins: [kaplayPluginFactory({ global: true })],
+  plugins: [examplePlugin({ global: true })],
 });
 
-plugin();
+example();
 ```
 
 To load the plugin using a script:
@@ -63,10 +63,10 @@ To load the plugin using a script:
 
 <script>
   const k = kaplay({
-    plugins: [window['kaplay-plugin-template'].default()],
+    plugins: [window['kaplay-plugin-template'].examplePlugin()],
   });
 
-  k.plugin();
+  k.example();
 </script>
 ```
 

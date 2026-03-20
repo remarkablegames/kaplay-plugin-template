@@ -1,9 +1,9 @@
 import type { KAPLAYCtx } from 'kaplay';
 
-import kaplayPluginFactory from '../dist/plugin.mjs';
+import { examplePlugin } from '../dist/plugin.mjs';
 
 describe('dist/plugin.mjs', () => {
-  it('adds plugin', () => {
+  it('adds example', () => {
     const log = vi.fn();
     const k = {
       debug: {
@@ -11,7 +11,7 @@ describe('dist/plugin.mjs', () => {
       },
     } as unknown as KAPLAYCtx;
 
-    kaplayPluginFactory()(k).plugin();
+    examplePlugin()(k).example();
 
     expect(log).toHaveBeenCalledExactlyOnceWith('kaplay-plugin-template');
   });

@@ -1,11 +1,11 @@
 import kaplay from 'kaplay';
 
-import kaplayPluginFactory from '../src/plugin';
+import { examplePlugin } from '../src/plugin';
 
 const k = kaplay({
-  plugins: [kaplayPluginFactory({ global: true })],
+  plugins: [examplePlugin({ global: true })],
 });
 
-k.plugin();
+k.example();
 
-plugin();
+example();
