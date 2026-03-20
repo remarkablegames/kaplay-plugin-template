@@ -1,4 +1,4 @@
 {
-  "entryPoints": ["src"],
+  "entryPoints": ["src/plugin.ts"],
   "cacheBust": true
 }

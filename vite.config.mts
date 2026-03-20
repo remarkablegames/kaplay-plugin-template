@@ -7,21 +7,24 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(import.meta.dirname, 'src/index.ts'),
+      entry: resolve(import.meta.dirname, 'src/plugin.ts'),
       name: 'kaplay-plugin-template',
       formats: ['cjs', 'es', 'umd'],
       fileName: (format) => {
         switch (format) {
           case 'cjs':
-            return 'index.cjs';
+            return 'plugin.cjs';
           case 'es':
-            return 'index.mjs';
+            return 'plugin.mjs';
           case 'umd':
-            return 'index.umd.js';
+            return 'plugin.umd.js';
           default:
-            return `index.${format}.js`;
+            return `plugin.${format}.js`;
         }
       },
+    },
+    rollupOptions: {
+      external: ['kaplay'],
     },
     sourcemap: true,
   },
@@ -34,8 +37,8 @@ export default defineConfig({
         await Promise.all(
           ['cts', 'mts'].map((extension) =>
             copyFile(
-              resolve(outDir, 'index.d.ts'),
-              resolve(outDir, `index.d.${extension}`),
+              resolve(outDir, 'plugin.d.ts'),
+              resolve(outDir, `plugin.d.${extension}`),
             ),
           ),
         );

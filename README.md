@@ -8,10 +8,12 @@
 
 Kaplay Plugin Template
 
-## Quick Start
+## Prerequisites
 
-```ts
-import { name } from 'kaplay-plugin-template';
+Install [kaplay](https://www.npmjs.com/package/kaplay):
+
+```sh
+npm install kaplay
 ```
 
 ## Install
@@ -22,38 +24,39 @@ import { name } from 'kaplay-plugin-template';
 npm install kaplay-plugin-template
 ```
 
-[Yarn](https://yarnpkg.com/package/kaplay-plugin-template):
-
-```sh
-yarn add kaplay-plugin-template
-```
-
 [CDN](https://unpkg.com/browse/kaplay-plugin-template/):
 
 ```html
-<script src="https://unpkg.com/kaplay-plugin-template@latest/dist/index.umd.js"></script>
+<script src="https://unpkg.com/kaplay-plugin-template@latest/dist/plugin.umd.js"></script>
 ```
 
 ## Usage
 
-ES Modules:
+Use the plugin in your game:
 
 ```ts
-import { name } from 'kaplay-plugin-template';
+import kaplay from 'kaplay';
+import { plugin } from 'kaplay-plugin-template';
+
+const k = kaplay({
+  plugins: [plugin],
+});
+
+k.plugin();
 ```
 
-CommonJS:
-
-```ts
-const { name } = require('kaplay-plugin-template');
-```
-
-UMD:
+Or load it using a script:
 
 ```html
-<script src="https://unpkg.com/kaplay-plugin-template@latest/dist/index.umd.js"></script>
+<script src="https://unpkg.com/kaplay@latest/dist/kaplay.js"></script>
+<script src="https://unpkg.com/kaplay-plugin-template@latest/dist/plugin.umd.js"></script>
+
 <script>
-  const { name } = window['kaplay-plugin-template'];
+  const k = kaplay({
+    plugins: [window['kaplay-plugin-template'].plugin],
+  });
+
+  k.plugin();
 </script>
 ```
 
