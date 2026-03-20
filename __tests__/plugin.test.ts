@@ -1,18 +1,37 @@
 import type { KAPLAYCtx } from 'kaplay';
 
-import { plugin } from '../src/plugin';
+import kaplayPluginFactory from '../src/plugin';
+
+function noop() {
+  // pass
+}
 
 describe('plugin', () => {
+  const log = vi.fn();
+  const k = {
+    debug: {
+      log,
+    },
+  } as unknown as KAPLAYCtx;
+
+  afterEach(() => {
+    vi.clearAllMocks();
+    globalThis.plugin = noop;
+  });
+
   it('logs the template name', () => {
-    const log = vi.fn();
-    const k = {
-      debug: {
-        log,
-      },
-    } as unknown as KAPLAYCtx;
+    kaplayPluginFactory()(k).plugin();
 
-    plugin(k).plugin();
+    expect(log).toHaveBeenCalledExactlyOnceWith('kaplay-plugin-template');
+  });
 
-    expect(log).toHaveBeenCalledWith('kaplay-plugin-template');
+  it('registers plugin on globalThis when global is enabled', () => {
+    kaplayPluginFactory({ global: true })(k);
+
+    expect(globalThis.plugin).toBeTypeOf('function');
+
+    globalThis.plugin();
+
+    expect(log).toHaveBeenCalledExactlyOnceWith('kaplay-plugin-template');
   });
 });

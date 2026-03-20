@@ -31,6 +31,7 @@ export default defineConfig({
 
   plugins: [
     dts({
+      include: ['src'],
       rollupTypes: true,
       async afterBuild() {
         const outDir = resolve(import.meta.dirname, 'dist');

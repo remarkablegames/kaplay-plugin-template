@@ -36,16 +36,26 @@ Use the plugin in your game:
 
 ```ts
 import kaplay from 'kaplay';
-import { plugin } from 'kaplay-plugin-template';
+import kaplayPluginFactory from 'kaplay-plugin-template';
 
 const k = kaplay({
-  plugins: [plugin],
+  plugins: [kaplayPluginFactory()],
 });
 
 k.plugin();
 ```
 
-Or load it using a script:
+To expose `plugin` on the window, enable the `global` option:
+
+```ts
+const k = kaplay({
+  plugins: [kaplayPluginFactory({ global: true })],
+});
+
+plugin();
+```
+
+To load the plugin using a script:
 
 ```html
 <script src="https://unpkg.com/kaplay@latest/dist/kaplay.js"></script>
@@ -53,7 +63,7 @@ Or load it using a script:
 
 <script>
   const k = kaplay({
-    plugins: [window['kaplay-plugin-template'].plugin],
+    plugins: [window['kaplay-plugin-template'].default()],
   });
 
   k.plugin();
