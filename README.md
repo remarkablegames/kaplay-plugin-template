@@ -4,7 +4,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/kaplay-plugin-template.svg)](https://www.npmjs.com/package/kaplay-plugin-template)
 [![build](https://github.com/remarkablegames/kaplay-plugin-template/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/kaplay-plugin-template/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/remarkablegames/kaplay-plugin-template/graph/badge.svg?token=B0W2IQZ66A)](https://codecov.io/gh/remarkablegames/kaplay-plugin-template)
+[![codecov](https://codecov.io/gh/remarkablegames/kaplay-plugin-template/graph/badge.svg?token=E7kjfLCpkM)](https://codecov.io/gh/remarkablegames/kaplay-plugin-template)
 
 Kaplay Plugin Template
 
