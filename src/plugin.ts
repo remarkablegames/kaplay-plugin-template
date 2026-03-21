@@ -6,10 +6,12 @@ declare module 'kaplay' {
   }
 }
 
+export type Example = () => void;
+
 export function examplePlugin(k: KAPLAYCtx) {
-  function example() {
+  const example: Example = () => {
     k.debug.log('kaplay-plugin-template');
-  }
+  };
 
   return { example };
 }

@@ -12,5 +12,5 @@
     "types": ["vitest/globals"],
     "noEmit": true
   },
-  "include": ["__tests__", "example", "src", "*.mjs", "*.mts", "*.ts"]
+  "include": ["__tests__", "example", "src", "*.mts"]
 }
