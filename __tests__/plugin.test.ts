@@ -1,6 +1,6 @@
 import type { KAPLAYCtx } from 'kaplay';
 
-import examplePlugin from '../src/plugin';
+import { examplePlugin } from '../src/plugin';
 
 describe('plugin', () => {
   const log = vi.fn();

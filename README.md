@@ -36,7 +36,7 @@ Import the plugin:
 
 ```ts
 import kaplay from 'kaplay';
-import examplePlugin from 'kaplay-plugin-template';
+import { examplePlugin } from 'kaplay-plugin-template';
 
 const k = kaplay({
   plugins: [examplePlugin],
@@ -57,7 +57,7 @@ To load the plugin using a script:
 
 <script>
   const k = kaplay({
-    plugins: [KaplayPluginTemplate.default],
+    plugins: [KaplayPluginTemplate.examplePlugin],
   });
 
   k.example();

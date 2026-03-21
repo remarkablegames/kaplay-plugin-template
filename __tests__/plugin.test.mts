@@ -1,15 +1,15 @@
 import type { KAPLAYCtx } from 'kaplay';
 
-import plugin from '../dist/plugin.mjs';
+import { examplePlugin } from '../dist/plugin.mjs';
 
 describe('dist/plugin.mjs', () => {
   it('exports plugin', () => {
-    expect(plugin).toBeTypeOf('function');
+    expect(examplePlugin).toBeTypeOf('function');
   });
 
   it('adds plugin', () => {
     const k = {} as unknown as KAPLAYCtx;
-    expect(plugin(k).example).toBeTypeOf('function');
+    expect(examplePlugin(k).example).toBeTypeOf('function');
   });
 
   it('calls plugin', () => {
@@ -20,7 +20,7 @@ describe('dist/plugin.mjs', () => {
       },
     } as unknown as KAPLAYCtx;
 
-    plugin(k).example();
+    examplePlugin(k).example();
 
     expect(log).toHaveBeenCalledExactlyOnceWith('kaplay-plugin-template');
   });

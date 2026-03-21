@@ -6,7 +6,7 @@ declare module 'kaplay' {
   }
 }
 
-export default function examplePlugin(k: KAPLAYCtx) {
+export function examplePlugin(k: KAPLAYCtx) {
   function example() {
     k.debug.log('kaplay-plugin-template');
   }
