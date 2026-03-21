@@ -32,7 +32,7 @@ npm install kaplay-plugin-template
 
 ## Usage
 
-Use the plugin in your game:
+Import the plugin:
 
 ```ts
 import kaplay from 'kaplay';
@@ -41,7 +41,11 @@ import { examplePlugin } from 'kaplay-plugin-template';
 const k = kaplay({
   plugins: [examplePlugin()],
 });
+```
 
+Use the plugin:
+
+```ts
 k.example();
 ```
 
