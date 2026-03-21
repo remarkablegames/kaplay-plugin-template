@@ -31,7 +31,7 @@
     "prepublishOnly": "npm run build && npm run lint && npm run lint:tsc && npm run test:ci",
     "start": "vite --open",
     "test": "vitest run",
-    "test:ci": "CI=true npm test -- --color",
+    "test:ci": "CI=true npm test -- --color --coverage",
     "test:watch": "vitest --coverage.enabled=false"
   },
   "repository": {
