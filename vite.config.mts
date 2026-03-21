@@ -1,14 +1,16 @@
-import { copyFile } from 'node:fs/promises';
+import { copyFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 import dts from 'vite-plugin-dts';
 import { defineConfig } from 'vitest/config';
 
+const dist = resolve(import.meta.dirname, 'dist');
+
 export default defineConfig({
   build: {
     lib: {
       entry: resolve(import.meta.dirname, 'src/plugin.ts'),
-      name: 'kaplay-plugin-template',
+      name: 'KaplayPluginTemplate',
       formats: ['cjs', 'es', 'umd'],
       fileName: (format) => {
         switch (format) {
@@ -23,7 +25,7 @@ export default defineConfig({
         }
       },
     },
-    rollupOptions: {
+    rolldownOptions: {
       external: ['kaplay'],
     },
     sourcemap: true,
@@ -33,16 +35,13 @@ export default defineConfig({
     dts({
       include: ['src'],
       rollupTypes: true,
-      async afterBuild() {
-        const outDir = resolve(import.meta.dirname, 'dist');
-        await Promise.all(
-          ['cts', 'mts'].map((extension) =>
-            copyFile(
-              resolve(outDir, 'plugin.d.ts'),
-              resolve(outDir, `plugin.d.${extension}`),
-            ),
-          ),
-        );
+      afterBuild() {
+        ['cts', 'mts'].map((extension) => {
+          copyFileSync(
+            resolve(dist, 'plugin.d.ts'),
+            resolve(dist, `plugin.d.${extension}`),
+          );
+        });
       },
     }),
   ],
