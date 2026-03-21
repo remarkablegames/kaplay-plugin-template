@@ -1,14 +1,18 @@
 import type { KAPLAYCtx } from 'kaplay';
 
-type Plugin = () => void;
+declare module 'kaplay' {
+  interface KAPLAYCtx {
+    example: () => void;
+  }
+}
 
 declare global {
-  var example: Plugin;
+  var example: () => void;
 }
 
 export function examplePlugin({ global = false } = {}) {
   return (k: KAPLAYCtx) => {
-    const example: Plugin = () => {
+    const example = () => {
       k.debug.log('kaplay-plugin-template');
     };
 
