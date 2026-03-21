@@ -36,10 +36,10 @@ Import the plugin:
 
 ```ts
 import kaplay from 'kaplay';
-import { examplePlugin } from 'kaplay-plugin-template';
+import examplePlugin from 'kaplay-plugin-template';
 
 const k = kaplay({
-  plugins: [examplePlugin()],
+  plugins: [examplePlugin],
 });
 ```
 
@@ -47,16 +47,6 @@ Use the plugin:
 
 ```ts
 k.example();
-```
-
-To expose `example` on the window, enable the `global` option:
-
-```ts
-const k = kaplay({
-  plugins: [examplePlugin({ global: true })],
-});
-
-example();
 ```
 
 To load the plugin using a script:
@@ -67,7 +57,7 @@ To load the plugin using a script:
 
 <script>
   const k = kaplay({
-    plugins: [KaplayPluginTemplate.examplePlugin()],
+    plugins: [KaplayPluginTemplate.default],
   });
 
   k.example();

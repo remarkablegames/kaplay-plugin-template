@@ -6,20 +6,10 @@ declare module 'kaplay' {
   }
 }
 
-declare global {
-  var example: () => void;
-}
+export default function examplePlugin(k: KAPLAYCtx) {
+  function example() {
+    k.debug.log('kaplay-plugin-template');
+  }
 
-export function examplePlugin({ global = false } = {}) {
-  return (k: KAPLAYCtx) => {
-    const example = () => {
-      k.debug.log('kaplay-plugin-template');
-    };
-
-    if (global) {
-      globalThis.example = example;
-    }
-
-    return { example };
-  };
+  return { example };
 }
