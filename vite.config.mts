@@ -12,16 +12,14 @@ export default defineConfig({
       entry: resolve(import.meta.dirname, 'src/plugin.ts'),
       name: 'KaplayPluginTemplate',
       formats: ['cjs', 'es', 'umd'],
-      fileName: (format) => {
+      fileName: (format, entryName) => {
         switch (format) {
-          case 'cjs':
-            return 'plugin.cjs';
           case 'es':
-            return 'plugin.mjs';
+            return `${entryName}.mjs`;
           case 'umd':
-            return 'plugin.umd.js';
+            return `${entryName}.umd.js`;
           default:
-            return `plugin.${format}.js`;
+            return `${entryName}.${format}`;
         }
       },
     },
