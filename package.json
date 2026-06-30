@@ -78,7 +78,7 @@
     "publint": "0.3.21",
     "typedoc": "0.28.19",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.62.0",
+    "typescript-eslint": "8.62.1",
     "vite": "8.0.16",
     "vite-plugin-dts": "4.5.4",
     "vitest": "4.1.5"
