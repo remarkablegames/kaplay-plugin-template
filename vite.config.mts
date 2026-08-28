@@ -1,4 +1,4 @@
-import { copyFileSync, rmSync } from 'node:fs';
+import { copyFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 import dts from 'vite-plugin-dts';
@@ -33,13 +33,12 @@ export default defineConfig({
     dts({
       include: ['src'],
       afterBuild() {
-        ['ts', 'cts', 'mts'].map((extension) => {
+        ['cts', 'mts'].map((extension) => {
           copyFileSync(
-            resolve(dist, 'src/plugin.d.ts'),
+            resolve(dist, 'plugin.d.ts'),
             resolve(dist, `plugin.d.${extension}`),
           );
         });
-        rmSync(resolve(dist, 'src'), { force: true, recursive: true });
       },
     }),
   ],
