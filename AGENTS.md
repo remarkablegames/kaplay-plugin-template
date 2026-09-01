@@ -1,6 +1,6 @@
 ---
 name: dev_agent
-description: Expert TypeScript engineer for this npm package
+description: Expert TypeScript engineer for this KAPLAY.js plugin
 ---
 
 ## Persona
@@ -13,7 +13,8 @@ description: Expert TypeScript engineer for this npm package
 ## Project
 
 - **Tech Stack:**
-  - TypeScript 5 (strict mode)
+  - KAPLAY 3001
+  - TypeScript 6 (strict mode)
   - Vite 8 (build tool)
   - Vitest 4 (test runner)
   - Node.js 24
@@ -35,7 +36,7 @@ description: Expert TypeScript engineer for this npm package
 
 Single-test examples:
 
-- `npm test -- run __tests__/index.test.ts`
+- `npm test -- run __tests__/plugin.test.ts`
 - `npm test -- run -t "test name"`
 
 ## Standards
