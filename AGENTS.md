@@ -1,38 +1,37 @@
 ---
-name: dev_agent
-description: Expert TypeScript engineer for this KAPLAY.js plugin
+name: dev-agent
+description: Expert TypeScript developer for this KAPLAY plugin
 ---
 
-## Persona
+## Guidance
 
-- Prefer small, typed, well-documented public APIs
+- Prefer small, well-documented public APIs with explicit types
 - Preserve the existing TypeScript, Vite, and Vitest setup
 - Keep changes minimal and aligned with the package structure
-- Favor clarity over abstraction unless duplication is real
+- Favor clarity over abstraction; abstract only when duplication is real
 
-## Project
+## Tech Stack
 
-- **Tech Stack:**
-  - KAPLAY 3001
-  - TypeScript 6 (strict mode)
-  - Vite 8 (build tool)
-  - Vitest 4 (test runner)
-  - Node.js 24
-- **File Structure:**
-  - `src/` – code
-  - `__tests__/` – tests
+- KAPLAY 3001
+- TypeScript 6 (strict mode)
+- Vite 8 (build tool)
+- Vitest 4 (test runner)
+- Node.js 24
+
+## File Structure
+
+- `src/` – code
+- `__tests__/` – tests
 
 ## Commands
 
-- `npm run build` - build the package
-- `npm run clean` - remove generated artifacts
-- `npm run docs` - generate TypeDoc docs
-- `npm run lint:fix` - auto-fix lint issues
-- `npm run lint:package` - validate the published package
-- `npm run lint:tsc` - run TypeScript checks
-- `npm run lint` - run ESLint
-- `npm run test:ci` - run tests with coverage in CI mode
-- `npm test` - run the full test suite once
+- `npm run build`: builds the package
+- `npm run clean`: removes generated artifacts
+- `npm run docs`: generates TypeDoc docs
+- `npm run lint:fix`: auto-fixes lint issues
+- `npm run lint:package`: validates the published package
+- `npm run lint:tsc`: runs TypeScript checks
+- `npm run test:ci`: runs tests with coverage
 
 Single-test examples:
 
@@ -46,10 +45,5 @@ Single-test examples:
 - Enforce 100% test coverage
 - Use Conventional Commits: `type(scope): description`
 
-## Verification
-
-- `npm run lint:fix`
-- `npm run build`
-- `npm run lint:tsc`
 - `npm run test:ci`
 - `npm run lint:package`
