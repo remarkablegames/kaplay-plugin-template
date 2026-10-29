@@ -64,7 +64,7 @@
     "@commitlint/cli": "21.2.4",
     "@commitlint/config-conventional": "21.2.4",
     "@eslint/js": "10.0.1",
-    "@types/node": "26.6.5",
+    "@types/node": "26.6.6",
     "@vitest/coverage-v8": "5.0.5",
     "eslint": "10.13.0",
     "eslint-plugin-prettier": "5.5.7",
@@ -78,7 +78,7 @@
     "tsdown": "0.23.4",
     "typedoc": "0.28.20",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.72.0",
+    "typescript-eslint": "8.72.1",
     "vite": "8.3.5",
     "vitest": "5.0.5"
   },
