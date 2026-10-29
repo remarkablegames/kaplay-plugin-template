@@ -6,10 +6,10 @@ description: Expert TypeScript developer for this KAPLAY plugin
 ## Guidance
 
 - Follow KAPLAY patterns and conventions
-- Prefer small, well-documented public APIs with explicit types
+- Prefer small, typed, well-documented public APIs
 - Preserve the existing TypeScript, Vite, and Vitest setup
 - Keep changes minimal and aligned with the package structure
-- Favor clarity over abstraction; abstract only when duplication is real
+- Favor clarity over abstraction unless duplication is real
 
 ## Tech Stack
 
