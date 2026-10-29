@@ -5,6 +5,7 @@ description: Expert TypeScript developer for this KAPLAY plugin
 
 ## Guidance
 
+- Follow KAPLAY patterns and conventions
 - Prefer small, well-documented public APIs with explicit types
 - Preserve the existing TypeScript, Vite, and Vitest setup
 - Keep changes minimal and aligned with the package structure
@@ -12,7 +13,7 @@ description: Expert TypeScript developer for this KAPLAY plugin
 
 ## Tech Stack
 
-- KAPLAY 3001
+- KAPLAY 3001 (game engine)
 - TypeScript 6 (strict mode)
 - Vite 8 (build tool)
 - Vitest 4 (test runner)
@@ -20,12 +21,12 @@ description: Expert TypeScript developer for this KAPLAY plugin
 
 ## File Structure
 
-- `src/` – code
-- `__tests__/` – tests
+- `src/`: code
+- `__tests__/`: tests
 
 ## Commands
 
-- `npm run build`: builds the package
+- `npm run build`: builds the package, outputs to `dist/`
 - `npm run clean`: removes generated artifacts
 - `npm run docs`: generates TypeDoc docs
 - `npm run lint:fix`: auto-fixes lint issues
@@ -40,10 +41,16 @@ Single-test examples:
 
 ## Standards
 
-- TypeScript is `strict`; avoid implicit `any`
-- Tests use Vitest globals (do not import `vitest`)
-- Enforce 100% test coverage
-- Use Conventional Commits: `type(scope): description`
+Naming conventions:
 
-- `npm run test:ci`
-- `npm run lint:package`
+- Functions: camelCase (`getGameObject`, `createLevel`)
+- Classes: PascalCase (`GameStateManager`, `Character`)
+- Constants: UPPER_SNAKE_CASE (`GAME_CONFIG`, `MAX_LEVEL`)
+
+Code style:
+
+- [Prettier](./.prettierrc.json) for formatting
+- [ESLint](./eslint.config.mts) with `typescript-eslint` strict and stylistic type-checked configs
+  - Sort imports and exports with `simple-import-sort`
+- Avoid unnecessary type casting, only annotate or assert types when inference is genuinely impossible
+- Tests use Vitest globals (do not import `vitest`), `/* v8 ignore start */` and `/* v8 ignore stop */` for lines that are untestable
