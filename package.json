@@ -1,7 +1,7 @@
 {
   "name": "kaplay-plugin-template",
   "version": "1.0.0-alpha",
-  "description": "KAPLAY plugin template",
+  "description": "Kaplay Plugin Template",
   "author": "Mark <mark@remarkablemark.org> (https://remarkablemark.org)",
   "main": "./dist/plugin.cjs",
   "module": "./dist/plugin.mjs",
@@ -37,6 +37,7 @@
     "lint:fix": "npm run lint -- --fix",
     "lint:package": "publint",
     "lint:tsc": "tsc",
+    "lint:types": "npx @arethetypeswrong/cli --pack",
     "prepare": "husky",
     "prepublishOnly": "npm run build && npm run lint && npm run lint:tsc && npm run test:ci",
     "start": "vite --open",

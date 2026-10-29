@@ -26,13 +26,15 @@ description: Expert TypeScript developer for this KAPLAY plugin
 
 ## Commands
 
-- `npm run build`: builds the package, outputs to `dist/`
+- `npm run build`: builds package, outputs to `dist/`
 - `npm run clean`: removes generated artifacts
 - `npm run docs`: generates TypeDoc docs
 - `npm run lint:fix`: auto-fixes lint issues
-- `npm run lint:package`: validates the published package
+- `npm run lint:package`: validates published package
 - `npm run lint:tsc`: runs TypeScript checks
+- `npm run lint:types`: analyzes package for type issues
 - `npm run test:ci`: runs tests with coverage
+- `npm start`: starts and opens development web server at http://localhost:5173 (run manually by user; don't execute automatically)
 
 Single-test examples:
 
