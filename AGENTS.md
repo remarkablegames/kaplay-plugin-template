@@ -7,7 +7,7 @@ description: Expert TypeScript developer for this KAPLAY plugin
 
 - Follow KAPLAY patterns and conventions
 - Prefer small, typed, well-documented public APIs
-- Preserve the existing TypeScript, Vite, and Vitest setup
+- Preserve the existing TypeScript, tsdown, and Vitest setup
 - Keep changes minimal and aligned with the package structure
 - Favor clarity over abstraction unless duplication is real
 
@@ -15,7 +15,7 @@ description: Expert TypeScript developer for this KAPLAY plugin
 
 - KAPLAY 3001 (game engine)
 - TypeScript 6 (strict mode)
-- Vite 8 (build tool)
+- tsdown (build tool)
 - Vitest 4 (test runner)
 - Node.js 24
 
