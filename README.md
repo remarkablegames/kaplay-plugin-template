@@ -43,6 +43,12 @@ const k = kaplay({
 });
 ```
 
+Import the plugin's global TypeScript definitions:
+
+```ts
+import 'kaplay-plugin-template/global';
+```
+
 Load the plugin using a script:
 
 ```html
