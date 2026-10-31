@@ -1,12 +1,8 @@
 import type { KAPLAYCtx } from 'kaplay';
 
-declare module 'kaplay' {
-  interface KAPLAYCtx {
-    example: () => void;
-  }
-}
+import type { Example } from './types';
 
-export type Example = () => void;
+export type { Example };
 
 export function examplePlugin(k: KAPLAYCtx) {
   const example: Example = () => {

@@ -6,7 +6,7 @@
 [![build](https://github.com/remarkablegames/kaplay-plugin-template/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablegames/kaplay-plugin-template/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/remarkablegames/kaplay-plugin-template/graph/badge.svg?token=E7kjfLCpkM)](https://codecov.io/gh/remarkablegames/kaplay-plugin-template)
 
-Kaplay Plugin Template
+🦖 Kaplay Plugin Template
 
 ## Prerequisites
 
@@ -43,13 +43,7 @@ const k = kaplay({
 });
 ```
 
-Use the plugin:
-
-```ts
-k.example();
-```
-
-To load the plugin using a script:
+Load the plugin using a script:
 
 ```html
 <script src="https://unpkg.com/kaplay@latest/dist/kaplay.js"></script>
@@ -62,6 +56,12 @@ To load the plugin using a script:
 
   k.example();
 </script>
+```
+
+Use the plugin:
+
+```ts
+k.example();
 ```
 
 ## Release
