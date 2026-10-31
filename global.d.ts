@@ -1,4 +1,6 @@
-import type { Example } from './dist/plugin.cjs';
+import { examplePlugin } from './dist/plugin.cjs';
+
+type Plugin = ReturnType<typeof examplePlugin>;
 
 declare global {
   /**
@@ -9,7 +11,7 @@ declare global {
    * example();
    * ```
    */
-  var example: Example;
+  var example: Plugin['example'];
 }
 
 export {};
