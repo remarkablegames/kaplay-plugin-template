@@ -16,7 +16,7 @@ updates:
       eslint:
         patterns:
           - '*eslint*'
-          - prettier
+          - '*prettier*'
       vite:
         patterns:
           - '*vite*'
